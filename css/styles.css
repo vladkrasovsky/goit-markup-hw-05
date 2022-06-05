@@ -38,6 +38,10 @@
   --letter-spacing-default: 0.03em;
   --letter-spacing-sm: 0.02em;
   --letter-spacing-lg: 0.06em;
+
+  /* transitions */
+  --transition-base-time: 250ms;
+  --transition-base-animation: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -96,6 +100,10 @@ body {
   border: none;
   border-radius: 4px;
 
+  transition-duration: var(--transition-base-time);
+  transition-timing-function: var(--transition-base-animation);
+  transition-property: color, background-color, box-shadow;
+
   cursor: pointer;
   user-select: none;
 }
@@ -136,6 +144,10 @@ body {
 .link {
   text-decoration: none;
   color: inherit;
+
+  transition-duration: var(--transition-base-time);
+  transition-timing-function: var(--transition-base-animation);
+  transition-property: color;
 }
 .link:hover,
 .link:focus {
@@ -176,6 +188,10 @@ body {
   color: var(--socials-color);
   background-color: var(--socials-bg);
   border-radius: 50%;
+
+  transition-duration: var(--transition-base-time);
+  transition-timing-function: var(--transition-base-animation);
+  transition-property: color, background-color;
 }
 .list-socials-link:hover,
 .list-socials-link:focus {
@@ -438,6 +454,10 @@ body {
   color: var(--icon-base-color);
   border: 1px solid var(--icon-base-color);
   border-radius: 4px;
+
+  transition-duration: var(--transition-base-time);
+  transition-timing-function: var(--transition-base-animation);
+  transition-property: color, border-color;
 }
 .clients-link:hover,
 .clients-link:focus {
@@ -470,6 +490,10 @@ body {
   display: flex;
   flex-direction: column;
   height: 100%;
+
+  transition-duration: var(--transition-base-time);
+  transition-timing-function: var(--transition-base-animation);
+  transition-property: box-shadow;
 }
 .portfolio-link:hover,
 .portfolio-link:focus {
@@ -531,6 +555,10 @@ body {
 }
 .footer-link {
   line-height: 1.71;
+
+  transition-duration: var(--transition-base-time);
+  transition-timing-function: var(--transition-base-animation);
+  transition-property: color;
 }
 .footer-link:not(.link-light) {
   color: var(--footer-link-color);
