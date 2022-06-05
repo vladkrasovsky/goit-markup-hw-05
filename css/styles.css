@@ -19,6 +19,7 @@
   --header-border-color: #ececec;
   --portfolio-border-color: #eeeeee;
   --footer-link-color: rgba(255, 255, 255, 0.6);
+  --work-label-bg: rgba(47, 48, 58, 0.8);
 
   /* sizes */
   --container-width: 1200px;
@@ -381,6 +382,26 @@ body {
 }
 .work-list > .item {
   flex-basis: calc(100% / 3 - var(--card-set-gap));
+}
+.work-item {
+  position: relative;
+}
+.work-label {
+  position: absolute;
+  bottom: 0;
+
+  width: 100%;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding: 27px;
+
+  font-weight: 700;
+  line-height: 1.14;
+  text-align: center;
+  text-transform: uppercase;
+
+  color: var(--text-color-light);
+  background-color: var(--work-label-bg);
 }
 
 /* -----------------------TEAM----------------------- */
