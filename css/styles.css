@@ -316,7 +316,20 @@ body {
   letter-spacing: var(--letter-spacing-sm);
 }
 .header-list-item.current .header-link {
+  position: relative;
   color: var(--accent-color);
+}
+.header-list-item.current .header-link::after {
+  content: '';
+
+  position: absolute;
+  bottom: -1px;
+
+  width: 100%;
+  height: 4px;
+
+  background-color: currentColor;
+  border-radius: 2px;
 }
 .header-link-icon {
   margin-right: 10px;
