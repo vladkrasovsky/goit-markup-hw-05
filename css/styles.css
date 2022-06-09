@@ -17,6 +17,7 @@
   --section-bg-light: #f5f4fa;
   --button-bg: #f5f4fa;
   --card-bg: #ffffff;
+  --header-bg: #ffffff;
   --header-border-color: #ececec;
   --portfolio-border-color: #eeeeee;
   --footer-link-color: rgba(255, 255, 255, 0.6);
@@ -26,6 +27,7 @@
   --container-width: 1200px;
   --footer-padding: 60px;
   --header-padding: 32px;
+  --header-height: 80px;
   --section-padding: 94px;
 
   /* gutters */
@@ -48,6 +50,7 @@
 
 body {
   min-width: var(--container-width); /* fixed layout width */
+  padding-top: var(--header-height); /* fallback if js not loaded */
 
   font-family: var(--font-default);
   font-size: var(--font-size-default);
@@ -270,6 +273,15 @@ body {
 
 /* -----------------------HEADER--------------------- */
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+
+  width: 100%;
+  min-height: var(--header-height);
+
+  background-color: var(--header-bg);
   border-bottom: 1px solid var(--header-border-color);
 }
 .header-wrap {
