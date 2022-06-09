@@ -22,6 +22,9 @@
   --portfolio-border-color: #eeeeee;
   --footer-link-color: rgba(255, 255, 255, 0.6);
   --work-label-bg: rgba(47, 48, 58, 0.8);
+  --overlay-color: rgba(0, 0, 0, 0.2);
+  --modal-bg: #ffffff;
+  --modal-close-border-color: rgba(0, 0, 0, 0.1);
 
   /* sizes */
   --container-width: 1200px;
@@ -657,4 +660,91 @@ body {
   line-height: 1.14;
   letter-spacing: var(--letter-spacing-default);
   text-transform: uppercase;
+}
+
+/* -----------------------MODALS--------------------- */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: var(--overlay-color);
+
+  transition-property: opacity, visibility;
+  transition-duration: var(--transition-base-time);
+  transition-timing-function: var(--transition-base-animation);
+}
+.backdrop.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.backdrop.is-hidden .modal-dialog {
+  opacity: 0;
+  transform: translateY(-50px);
+}
+
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+
+  display: flex;
+  height: 100%;
+  width: 100%;
+  padding: var(--card-set-gap);
+
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.modal-dialog {
+  position: relative;
+
+  width: 528px;
+  max-width: 100%;
+  min-height: 580px;
+  margin: auto;
+  padding: 40px;
+
+  color: var(--text-color);
+  line-height: 1.71;
+
+  background-color: var(--modal-bg);
+  border-radius: 4px;
+  box-shadow: var(--card-shadow);
+
+  transform: none;
+  transition-property: transform, opacity;
+  transition-duration: var(--transition-base-time);
+  transition-timing-function: var(--transition-base-animation);
+}
+.modal-close {
+  --size: 30px;
+
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--size);
+  width: var(--size);
+
+  background-color: transparent;
+  border: 1px solid var(--modal-close-border-color);
+  border-radius: 50%;
+
+  transition-property: fill;
+  transition-duration: var(--transition-base-time);
+  transition-timing-function: var(--transition-base-animation);
+
+  cursor: pointer;
+}
+.modal-close:hover {
+  fill: var(--accent-color);
 }
