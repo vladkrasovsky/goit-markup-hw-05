@@ -1,3 +1,10 @@
-const { height: headerHeight } = document.querySelector('.header').getBoundingClientRect();
+(() => {
+  const refs = {
+    header: document.querySelector('.header'),
+  };
 
-document.body.style.paddingTop = `${headerHeight}px`;
+  if (refs.header.classList.contains('is-fixed')) {
+    const { height: headerHeight } = refs.header.getBoundingClientRect();
+    document.body.style.paddingTop = `${headerHeight}px`;
+  }
+})();

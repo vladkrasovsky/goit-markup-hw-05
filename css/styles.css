@@ -276,16 +276,17 @@ body {
 
 /* -----------------------HEADER--------------------- */
 .header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 10;
-
-  width: 100%;
   min-height: var(--header-height);
 
   background-color: var(--header-bg);
   border-bottom: 1px solid var(--header-border-color);
+}
+.header.is-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
 }
 .header-wrap {
   display: flex;
